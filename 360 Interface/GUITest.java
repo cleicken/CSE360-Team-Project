@@ -28,50 +28,58 @@ public class GUITest extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jInternalFrame1 = new javax.swing.JInternalFrame();
-        jDialog1 = new javax.swing.JDialog();
+        about = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jDialog2 = new javax.swing.JDialog();
+        help = new javax.swing.JDialog();
         jPanel5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jDialog3 = new javax.swing.JDialog();
+        cycleError = new javax.swing.JDialog();
         jPanel6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jDialog4 = new javax.swing.JDialog();
+        nonInput = new javax.swing.JDialog();
         jPanel7 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jDialog5 = new javax.swing.JDialog();
+        restartConfirm = new javax.swing.JDialog();
         jPanel8 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
-        jDialog6 = new javax.swing.JDialog();
+        restartConfirmButton = new javax.swing.JButton();
+        closeConfirm = new javax.swing.JDialog();
         jPanel9 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
-        jDialog7 = new javax.swing.JDialog();
+        closeButton = new javax.swing.JButton();
+        proccessed = new javax.swing.JDialog();
         jPanel10 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        jButton9 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        restartOption = new javax.swing.JButton();
+        addOption = new javax.swing.JButton();
+        nonInt = new javax.swing.JDialog();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        disconnect = new javax.swing.JDialog();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        Dependencies = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        activityName = new javax.swing.JTextField();
+        dependencies = new javax.swing.JTextField();
+        addActivity = new javax.swing.JButton();
+        processData = new javax.swing.JButton();
+        aboutButton = new javax.swing.JButton();
+        helpButton = new javax.swing.JButton();
+        restartButton = new javax.swing.JButton();
+        activityNameLabel = new javax.swing.JLabel();
+        durationLabel = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jTextField3 = new javax.swing.JTextField();
+        dataTable = new javax.swing.JTable();
+        duration = new javax.swing.JTextField();
+        depend = new javax.swing.JRadioButton();
+        start = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        output = new javax.swing.JTextPane();
 
         jInternalFrame1.setVisible(true);
 
@@ -88,11 +96,11 @@ public class GUITest extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jInternalFrame1);
 
-        jDialog1.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        jDialog1.setTitle("About");
-        jDialog1.setAlwaysOnTop(true);
-        jDialog1.setBounds(new java.awt.Rectangle(500, 500, 500, 250));
-        jDialog1.setResizable(false);
+        about.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        about.setTitle("About");
+        about.setAlwaysOnTop(true);
+        about.setBounds(new java.awt.Rectangle(500, 500, 500, 100));
+        about.setResizable(false);
 
         jLabel4.setText("<html>\n<p>\nActivity Processor v0.01:\n<br />\nMade by Brent Ottley, Adrian Avram, Alexandra Dent, and Connor Leicken\n</p>");
         jLabel4.setToolTipText("");
@@ -109,25 +117,25 @@ public class GUITest extends javax.swing.JFrame {
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
-        jDialog1.getContentPane().setLayout(jDialog1Layout);
-        jDialog1Layout.setHorizontalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog1Layout.createSequentialGroup()
+        javax.swing.GroupLayout aboutLayout = new javax.swing.GroupLayout(about.getContentPane());
+        about.getContentPane().setLayout(aboutLayout);
+        aboutLayout.setHorizontalGroup(
+            aboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(aboutLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jDialog1Layout.setVerticalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog1Layout.createSequentialGroup()
+        aboutLayout.setVerticalGroup(
+            aboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(aboutLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jDialog2.setTitle("Help");
-        jDialog2.setBounds(new java.awt.Rectangle(500, 500, 500, 250));
+        help.setTitle("Help");
+        help.setBounds(new java.awt.Rectangle(500, 500, 500, 250));
 
         jLabel5.setText("<html>\n<p>\nAbout - Gives information on the group and the software, including current version <br />\nHelp - Basic explanation of the various buttons. This dialog box.  <br />\nRestart - Restarts the program with a clean memory <br />\nAdd Activity - Adds the information from the text boxes into the network chart in the bottom half <br />\nProcess Activity Data - Takes the data that was inputand produces the critical path as an output on the output tab  <br />\n</p>");
         jLabel5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -143,25 +151,25 @@ public class GUITest extends javax.swing.JFrame {
             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jDialog2Layout = new javax.swing.GroupLayout(jDialog2.getContentPane());
-        jDialog2.getContentPane().setLayout(jDialog2Layout);
-        jDialog2Layout.setHorizontalGroup(
-            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog2Layout.createSequentialGroup()
+        javax.swing.GroupLayout helpLayout = new javax.swing.GroupLayout(help.getContentPane());
+        help.getContentPane().setLayout(helpLayout);
+        helpLayout.setHorizontalGroup(
+            helpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(helpLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jDialog2Layout.setVerticalGroup(
-            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog2Layout.createSequentialGroup()
+        helpLayout.setVerticalGroup(
+            helpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(helpLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jDialog3.setTitle("Error");
-        jDialog3.setBounds(new java.awt.Rectangle(500, 500, 500, 250));
+        cycleError.setTitle("Error");
+        cycleError.setBounds(new java.awt.Rectangle(500, 500, 500, 150));
 
         jLabel6.setText("A cycle was detected while processing data. Program will now restart.");
         jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -183,25 +191,25 @@ public class GUITest extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jDialog3Layout = new javax.swing.GroupLayout(jDialog3.getContentPane());
-        jDialog3.getContentPane().setLayout(jDialog3Layout);
-        jDialog3Layout.setHorizontalGroup(
-            jDialog3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog3Layout.createSequentialGroup()
+        javax.swing.GroupLayout cycleErrorLayout = new javax.swing.GroupLayout(cycleError.getContentPane());
+        cycleError.getContentPane().setLayout(cycleErrorLayout);
+        cycleErrorLayout.setHorizontalGroup(
+            cycleErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cycleErrorLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jDialog3Layout.setVerticalGroup(
-            jDialog3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog3Layout.createSequentialGroup()
+        cycleErrorLayout.setVerticalGroup(
+            cycleErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cycleErrorLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jDialog4.setTitle("Error");
-        jDialog4.setBounds(new java.awt.Rectangle(500, 500, 500, 250));
+        nonInput.setTitle("Error");
+        nonInput.setBounds(new java.awt.Rectangle(500, 500, 500, 150));
 
         jLabel7.setText("The activity data is missing in one or more fields");
         jLabel7.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -223,38 +231,38 @@ public class GUITest extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jDialog4Layout = new javax.swing.GroupLayout(jDialog4.getContentPane());
-        jDialog4.getContentPane().setLayout(jDialog4Layout);
-        jDialog4Layout.setHorizontalGroup(
-            jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog4Layout.createSequentialGroup()
+        javax.swing.GroupLayout nonInputLayout = new javax.swing.GroupLayout(nonInput.getContentPane());
+        nonInput.getContentPane().setLayout(nonInputLayout);
+        nonInputLayout.setHorizontalGroup(
+            nonInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(nonInputLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jDialog4Layout.setVerticalGroup(
-            jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog4Layout.createSequentialGroup()
+        nonInputLayout.setVerticalGroup(
+            nonInputLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(nonInputLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jDialog5.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        jDialog5.setTitle("Restart Confirmation");
-        jDialog5.setAlwaysOnTop(true);
-        jDialog5.setBounds(new java.awt.Rectangle(500, 500, 600, 150));
-        jDialog5.setResizable(false);
+        restartConfirm.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        restartConfirm.setTitle("Restart Confirmation");
+        restartConfirm.setAlwaysOnTop(true);
+        restartConfirm.setBounds(new java.awt.Rectangle(500, 500, 600, 150));
+        restartConfirm.setResizable(false);
 
         jLabel8.setText("Are you sure you want to restart from the beginning and clear all activity data? If not, close this dialogue box.");
         jLabel8.setToolTipText("");
         jLabel8.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jButton6.setText("Restart");
-        jButton6.setAlignmentX(0.5F);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        restartConfirmButton.setText("Restart");
+        restartConfirmButton.setAlignmentX(0.5F);
+        restartConfirmButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                restartConfirmButtonActionPerformed(evt);
             }
         });
 
@@ -265,7 +273,7 @@ public class GUITest extends javax.swing.JFrame {
             .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(217, 217, 217)
-                .addComponent(jButton6)
+                .addComponent(restartConfirmButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -273,42 +281,42 @@ public class GUITest extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton6)
+                .addComponent(restartConfirmButton)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jDialog5Layout = new javax.swing.GroupLayout(jDialog5.getContentPane());
-        jDialog5.getContentPane().setLayout(jDialog5Layout);
-        jDialog5Layout.setHorizontalGroup(
-            jDialog5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog5Layout.createSequentialGroup()
+        javax.swing.GroupLayout restartConfirmLayout = new javax.swing.GroupLayout(restartConfirm.getContentPane());
+        restartConfirm.getContentPane().setLayout(restartConfirmLayout);
+        restartConfirmLayout.setHorizontalGroup(
+            restartConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(restartConfirmLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jDialog5Layout.setVerticalGroup(
-            jDialog5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog5Layout.createSequentialGroup()
+        restartConfirmLayout.setVerticalGroup(
+            restartConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(restartConfirmLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jDialog6.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        jDialog6.setTitle("Close Program Confirmation");
-        jDialog6.setAlwaysOnTop(true);
-        jDialog6.setBounds(new java.awt.Rectangle(500, 500, 550, 150));
-        jDialog6.setResizable(false);
+        closeConfirm.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        closeConfirm.setTitle("Close Program Confirmation");
+        closeConfirm.setAlwaysOnTop(true);
+        closeConfirm.setBounds(new java.awt.Rectangle(500, 500, 550, 150));
+        closeConfirm.setResizable(false);
 
         jLabel9.setText("Are you sure you want to close this program and lose all progress? If not, close this dialogue box.");
         jLabel9.setToolTipText("");
         jLabel9.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jButton8.setText("End");
-        jButton8.setAlignmentX(0.5F);
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        closeButton.setText("End");
+        closeButton.setAlignmentX(0.5F);
+        closeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                closeButtonActionPerformed(evt);
             }
         });
 
@@ -319,7 +327,7 @@ public class GUITest extends javax.swing.JFrame {
             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(224, 224, 224)
-                .addComponent(jButton8)
+                .addComponent(closeButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
@@ -327,44 +335,44 @@ public class GUITest extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton8))
+                .addComponent(closeButton))
         );
 
-        javax.swing.GroupLayout jDialog6Layout = new javax.swing.GroupLayout(jDialog6.getContentPane());
-        jDialog6.getContentPane().setLayout(jDialog6Layout);
-        jDialog6Layout.setHorizontalGroup(
-            jDialog6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog6Layout.createSequentialGroup()
+        javax.swing.GroupLayout closeConfirmLayout = new javax.swing.GroupLayout(closeConfirm.getContentPane());
+        closeConfirm.getContentPane().setLayout(closeConfirmLayout);
+        closeConfirmLayout.setHorizontalGroup(
+            closeConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(closeConfirmLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jDialog6Layout.setVerticalGroup(
-            jDialog6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog6Layout.createSequentialGroup()
+        closeConfirmLayout.setVerticalGroup(
+            closeConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(closeConfirmLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jDialog7.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        jDialog7.setAlwaysOnTop(true);
-        jDialog7.setBounds(new java.awt.Rectangle(500, 500, 550, 150));
-        jDialog7.setResizable(false);
+        proccessed.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        proccessed.setAlwaysOnTop(true);
+        proccessed.setBounds(new java.awt.Rectangle(500, 500, 550, 150));
+        proccessed.setResizable(false);
 
         jLabel10.setText("Data has been successfully processed, would you like to add more nodes or restart?");
         jLabel10.setToolTipText("");
         jLabel10.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jButton9.setText("Restart");
-        jButton9.setAlignmentX(0.5F);
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        restartOption.setText("Restart");
+        restartOption.setAlignmentX(0.5F);
+        restartOption.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                restartOptionActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Add nodes");
+        addOption.setText("Add nodes");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -373,9 +381,9 @@ public class GUITest extends javax.swing.JFrame {
             .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(155, 155, 155)
-                .addComponent(jButton9)
+                .addComponent(restartOption)
                 .addGap(60, 60, 60)
-                .addComponent(jButton7)
+                .addComponent(addOption)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
@@ -384,24 +392,104 @@ public class GUITest extends javax.swing.JFrame {
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton9)
-                    .addComponent(jButton7)))
+                    .addComponent(restartOption)
+                    .addComponent(addOption)))
         );
 
-        javax.swing.GroupLayout jDialog7Layout = new javax.swing.GroupLayout(jDialog7.getContentPane());
-        jDialog7.getContentPane().setLayout(jDialog7Layout);
-        jDialog7Layout.setHorizontalGroup(
-            jDialog7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog7Layout.createSequentialGroup()
+        javax.swing.GroupLayout proccessedLayout = new javax.swing.GroupLayout(proccessed.getContentPane());
+        proccessed.getContentPane().setLayout(proccessedLayout);
+        proccessedLayout.setHorizontalGroup(
+            proccessedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(proccessedLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jDialog7Layout.setVerticalGroup(
-            jDialog7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog7Layout.createSequentialGroup()
+        proccessedLayout.setVerticalGroup(
+            proccessedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(proccessedLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        nonInt.setTitle("Error");
+        nonInt.setBounds(new java.awt.Rectangle(500, 500, 500, 250));
+
+        jLabel11.setText("Activity Duration was not entered as an integer. Input fields will now be cleared");
+        jLabel11.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout nonIntLayout = new javax.swing.GroupLayout(nonInt.getContentPane());
+        nonInt.getContentPane().setLayout(nonIntLayout);
+        nonIntLayout.setHorizontalGroup(
+            nonIntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(nonIntLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        nonIntLayout.setVerticalGroup(
+            nonIntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(nonIntLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        disconnect.setTitle("Error");
+        disconnect.setBounds(new java.awt.Rectangle(500, 500, 500, 250));
+
+        jLabel12.setText("There are no complete path due to some nodes having no connections. The program will now restart.");
+        jLabel12.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout disconnectLayout = new javax.swing.GroupLayout(disconnect.getContentPane());
+        disconnect.getContentPane().setLayout(disconnectLayout);
+        disconnectLayout.setHorizontalGroup(
+            disconnectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(disconnectLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        disconnectLayout.setVerticalGroup(
+            disconnectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(disconnectLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -411,64 +499,72 @@ public class GUITest extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Activity Data Input"));
 
-        jTextField2.setToolTipText("");
-
-        jButton1.setText("Add Activity");
-        jButton1.setToolTipText("Adds the activity to the database");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        activityName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                activityNameActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Process Activity Data");
-        jButton2.setToolTipText("Process the activities entered and output the path data on the other tab");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        dependencies.setToolTipText("");
+        dependencies.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                dependenciesActionPerformed(evt);
             }
         });
 
-        jButton3.setText("About");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        addActivity.setText("Add Activity");
+        addActivity.setToolTipText("Adds the activity to the database");
+        addActivity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addActivityActionPerformed(evt);
+            }
+        });
+
+        processData.setText("Process Activity Data");
+        processData.setToolTipText("Process the activities entered and output the path data on the other tab");
+        processData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                processDataActionPerformed(evt);
+            }
+        });
+
+        aboutButton.setText("About");
+        aboutButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                aboutButtonMouseClicked(evt);
             }
         });
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        aboutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                aboutButtonActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Help");
-        jButton4.setToolTipText("Opens the User Guide");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        helpButton.setText("Help");
+        helpButton.setToolTipText("Opens the User Guide");
+        helpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                helpButtonActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Restart");
-        jButton5.setToolTipText("Clear all data entered so far");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        restartButton.setText("Restart");
+        restartButton.setToolTipText("Clear all data entered so far");
+        restartButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                restartButtonActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Activity Name:");
-        jLabel1.setToolTipText("Name of the activity");
+        activityNameLabel.setText("Activity Name:");
+        activityNameLabel.setToolTipText("Name of the activity");
 
-        jLabel2.setText("Dependencies:");
-        jLabel2.setToolTipText("Activities that must procede this one");
-
-        jLabel3.setText("Duration:");
-        jLabel3.setToolTipText("Length of time required for the activity");
+        durationLabel.setText("Duration:");
+        durationLabel.setToolTipText("Length of time required for the activity");
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Activity List"));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        dataTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -482,7 +578,7 @@ public class GUITest extends javax.swing.JFrame {
                 "Name", "Dependencies", "Duration"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(dataTable);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -500,6 +596,13 @@ public class GUITest extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        Dependencies.add(depend);
+        depend.setSelected(true);
+        depend.setText("Dependencies:");
+
+        Dependencies.add(start);
+        start.setText("Start Activity");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -509,27 +612,29 @@ public class GUITest extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField1)))
+                            .addComponent(activityNameLabel)
+                            .addComponent(durationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(depend))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(duration, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
+                            .addComponent(dependencies)
+                            .addComponent(activityName))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(start))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(addActivity)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2))
+                                .addComponent(processData))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton3)
+                                .addComponent(aboutButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton4)
+                                .addComponent(helpButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton5)))
+                                .addComponent(restartButton)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -537,25 +642,26 @@ public class GUITest extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
+                    .addComponent(aboutButton)
+                    .addComponent(helpButton)
+                    .addComponent(restartButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(activityName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(activityNameLabel))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dependencies, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(depend)
+                    .addComponent(start))
+                .addGap(6, 6, 6)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(durationLabel)
+                    .addComponent(duration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(8, 8, 8)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(addActivity)
+                    .addComponent(processData))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -564,7 +670,7 @@ public class GUITest extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Activity Path Data Output"));
 
-        jScrollPane3.setViewportView(jTextPane1);
+        jScrollPane3.setViewportView(output);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -604,49 +710,56 @@ public class GUITest extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    private void aboutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutButtonMouseClicked
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_jButton3MouseClicked
+    }//GEN-LAST:event_aboutButtonMouseClicked
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        jDialog1.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void aboutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutButtonActionPerformed
+        //making the about popup work
+        about.setVisible(true);
+    }//GEN-LAST:event_aboutButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        jDialog4.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void addActivityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActivityActionPerformed
+        //put stuff for when the add activity button is pushed here
+        //nonInput.setVisible(true);
+    }//GEN-LAST:event_addActivityActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        jDialog2.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
+        //making the help popup work
+        help.setVisible(true);
+    }//GEN-LAST:event_helpButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // process button
-        //jDialog3.setVisible(true);
-        jDialog7.setVisible(true);
+    private void processDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processDataActionPerformed
+        //put stuff for when the process button is pushed here
+        //proccessed.setVisible(true);
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_processDataActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void restartConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartConfirmButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_restartConfirmButtonActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        jDialog5.setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void restartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartButtonActionPerformed
+        //making the restart popup work
+        restartConfirm.setVisible(true);
+    }//GEN-LAST:event_restartButtonActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_closeButtonActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void restartOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartOptionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_restartOptionActionPerformed
+
+    private void activityNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activityNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_activityNameActionPerformed
+
+    private void dependenciesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dependenciesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dependenciesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -684,27 +797,28 @@ public class GUITest extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JDialog jDialog1;
-    private javax.swing.JDialog jDialog2;
-    private javax.swing.JDialog jDialog3;
-    private javax.swing.JDialog jDialog4;
-    private javax.swing.JDialog jDialog5;
-    private javax.swing.JDialog jDialog6;
-    private javax.swing.JDialog jDialog7;
+    private javax.swing.ButtonGroup Dependencies;
+    private javax.swing.JDialog about;
+    private javax.swing.JButton aboutButton;
+    private javax.swing.JTextField activityName;
+    private javax.swing.JLabel activityNameLabel;
+    private javax.swing.JButton addActivity;
+    private javax.swing.JButton addOption;
+    private javax.swing.JButton closeButton;
+    private javax.swing.JDialog closeConfirm;
+    private javax.swing.JDialog cycleError;
+    private javax.swing.JTable dataTable;
+    private javax.swing.JRadioButton depend;
+    private javax.swing.JTextField dependencies;
+    private javax.swing.JDialog disconnect;
+    private javax.swing.JTextField duration;
+    private javax.swing.JLabel durationLabel;
+    private javax.swing.JDialog help;
+    private javax.swing.JButton helpButton;
     private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -713,6 +827,8 @@ public class GUITest extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -725,10 +841,15 @@ public class GUITest extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JDialog nonInput;
+    private javax.swing.JDialog nonInt;
+    private javax.swing.JTextPane output;
+    private javax.swing.JDialog proccessed;
+    private javax.swing.JButton processData;
+    private javax.swing.JButton restartButton;
+    private javax.swing.JDialog restartConfirm;
+    private javax.swing.JButton restartConfirmButton;
+    private javax.swing.JButton restartOption;
+    private javax.swing.JRadioButton start;
     // End of variables declaration//GEN-END:variables
 }
