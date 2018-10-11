@@ -10,6 +10,7 @@
  */
 public class GUITest extends javax.swing.JFrame {
 
+    int currentRow = 0;
     /**
      * Creates new form GUITest
      */
@@ -74,7 +75,7 @@ public class GUITest extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         dataTable = new javax.swing.JTable();
-        duration = new javax.swing.JTextField();
+        durationField = new javax.swing.JTextField();
         depend = new javax.swing.JRadioButton();
         start = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
@@ -564,6 +565,7 @@ public class GUITest extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Activity List"));
 
+        dataTable.getTableHeader().setReorderingAllowed(false);
         dataTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -577,7 +579,22 @@ public class GUITest extends javax.swing.JFrame {
             new String [] {
                 "Name", "Dependencies", "Duration"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(dataTable);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -595,6 +612,12 @@ public class GUITest extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        durationField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                durationFieldActionPerformed(evt);
+            }
+        });
 
         Dependencies.add(depend);
         depend.setSelected(true);
@@ -618,7 +641,7 @@ public class GUITest extends javax.swing.JFrame {
                             .addComponent(depend))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(duration, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
+                            .addComponent(durationField, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
                             .addComponent(dependencies)
                             .addComponent(activityName))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -657,7 +680,7 @@ public class GUITest extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(durationLabel)
-                    .addComponent(duration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(durationField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(8, 8, 8)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addActivity)
@@ -722,7 +745,59 @@ public class GUITest extends javax.swing.JFrame {
 
     private void addActivityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActivityActionPerformed
         //put stuff for when the add activity button is pushed here
-        //nonInput.setVisible(true);
+        //getting data from user
+        boolean failed = false;
+        String name = "";
+        String dependData = "";
+        int duration = 0;
+        if (activityName.getText() != null && !activityName.getText().isEmpty()) //checking for blank name field
+        {
+            name = activityName.getText();
+        }
+        else
+        {
+            nonInput.setVisible(true);
+            failed = true;
+        }
+        
+        if (depend.isSelected() && (dependencies.getText() != null && !dependencies.getText().isEmpty())) //checking if dependencies are needed/empty
+        {
+            dependData = dependencies.getText();
+        }
+        else if (dependencies.getText() == null || dependencies.getText().isEmpty())
+        {
+            nonInput.setVisible(true);
+            failed = true;
+        }
+        else
+        {
+            //put stuff for making the activity have the start dependency here
+            
+        }
+        
+        try 
+        {
+            duration = Integer.parseInt(durationField.getText());
+        }
+        catch (NumberFormatException e) 
+        {
+            nonInt.setVisible(true);
+            failed = true;
+        }
+        
+        
+        if (!failed)
+        {
+           dataTable.setValueAt(name, currentRow, 0); //pulling data and putting it into the table
+           dataTable.setValueAt(dependData, currentRow, 1);
+           dataTable.setValueAt(duration, currentRow, 2);
+           currentRow++; //incrementing which row the data goes into
+           
+           activityName.setText("");
+           dependencies.setText("");
+           durationField.setText("");
+        }
+        
     }//GEN-LAST:event_addActivityActionPerformed
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
@@ -760,6 +835,10 @@ public class GUITest extends javax.swing.JFrame {
     private void dependenciesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dependenciesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dependenciesActionPerformed
+
+    private void durationFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_durationFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_durationFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -811,7 +890,7 @@ public class GUITest extends javax.swing.JFrame {
     private javax.swing.JRadioButton depend;
     private javax.swing.JTextField dependencies;
     private javax.swing.JDialog disconnect;
-    private javax.swing.JTextField duration;
+    private javax.swing.JTextField durationField;
     private javax.swing.JLabel durationLabel;
     private javax.swing.JDialog help;
     private javax.swing.JButton helpButton;
