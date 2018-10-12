@@ -22,5 +22,19 @@ public class Node
 		end = true;
 	}
 
+	public int getWeight()
+	{
+		if (end == true)
+			return 0;
+		else
+		{
+			int w = prev.length * futures.size();
+			if(w > 1)
+				return w;
+			else
+				return 0;
+		}
+	}
+
 
 }

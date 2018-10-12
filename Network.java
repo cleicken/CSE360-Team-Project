@@ -12,7 +12,9 @@ public class Network {
     private LinkedList<Node> activitiesList = new LinkedList<Node>(); //linked list for all activities
     //private LinkedList<Integer> durationlist1 = new LinkedList<Integer>();
     private	LinkedList<Node> starters = new LinkedList<Node>();
+    private LinkedList<LinkedList<Node>> pathList = new LinkedList<LinkedList<Node>>();
     private	LinkedList<Node> enders = new LinkedList<Node>();
+    private LinkedList<Node>[] printers;
     private String[] separateCommas;
     //private LinkedList<String> multdep = new LinkedList<String>();
     //private String tempString;
@@ -26,20 +28,42 @@ public class Network {
 	public void addActivity(Node n)					//adds a node as a new activity in the network
 	{
 		activitiesList.add(n);						//adds the node to the list of activities
-		for(int i = 0; i < n.prev.length;i++)		//loops through prev[] array to update the "futures" arrays of those nodes
+		LinkedList<Node> test = new LinkedList<Node>();
+		test.add(n);
+		pathList.add(test);
+		ListIterator<LinkedList<Node>> pathItr = pathList.listIterator(0);
+		if(n.prev != null)
 		{
-			getNode(n.prev[i]).futures.add(n);		//gets the node that's named in the prev[] array and then adds the current node into its futures
+			for(int i = 0; i < n.prev.length;i++)		//loops through prev[] array to update the "futures" arrays of those nodes
+			{
+				getNode(n.prev[i]).futures.add(n);		//gets the node that's named in the prev[] array and then adds the current node into its futures
+				getNode(n.prev[i]).end = false;			//sets previous nodes to not be marked as endpoints any more
+				Iterator<Node> nodeItr = pathItr.next().descendingIterator();
+			}
 		}
 	}
 
-    public String calcPath()
+    public int calcPathNum()										//calculates the number of paths in the network at processing time
     {
-		//this will iterate throught the list of ending nodes and (eventually, hopefully I'll figure it out tonight) work backwards recursively to create all the paths
-		ListIterator<Node> itr = enders.listIterator(0);
-		while( itr.hasNext())
+		ListIterator<Node> itr = activitiesList.listIterator(0);	//iterates through all nodes in the network
+		int num = 0;													//will store number of paths
+		while( itr.hasNext())										//loops until the end of the list
 		{
+			num = num + itr.next().getWeight();						//adds up the weights of each node to calculate the number of paths
 		}
-		return "hi";	//temporary return so it compiles
+		return num;													//returns number of paths
+	}
+
+	public String processNetwork()
+	{
+		String name = "";
+		ListIterator<LinkedList<Node>> pathItr = pathList.listIterator(0);
+		while(pathItr.hasNext())
+		{
+			Iterator<Node> nodeItr = pathItr.next().descendingIterator();
+			name = name + nodeItr.next().name;
+		}
+		return name;
 	}
 
 	public Node getNode(String name)								//find the node with that string name and returns it
@@ -53,7 +77,4 @@ public class Network {
 		}
 		return found;
 	}
-
-
-
 }
