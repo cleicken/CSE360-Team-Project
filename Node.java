@@ -6,12 +6,14 @@ public class Node
 	public int duration;
 	public LinkedList<Node> futures = new LinkedList<Node>();
 	public String[] prev = null;
+	public boolean start = false;
 	public boolean end = false;
 
 	public Node(String name1, int duration1)
 	{
 			name = name1;
 			duration = duration1;
+			start= true;
 	}
 
 	public Node(String name1, String dependencies, int duration1)

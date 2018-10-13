@@ -864,9 +864,33 @@ public class GUITest extends javax.swing.JFrame {
 
     private void processDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processDataActionPerformed
         //put stuff for when the process button is pushed here
-        //proccessed.setVisible(true);
-        outputStrings = network.processNetwork();
-        output.setText(outputStrings);
+    	int sortResult = network.sort();
+		
+		switch (sortResult)
+		{
+		case 0: //no start node
+			dependError.setVisible(true); //change the dialog box in netbeans later
+			//restart code here
+			break;
+			
+		case 1: //successfully sorted
+			proccessed.setVisible(true);
+			outputStrings = network.processNetwork();
+	        output.setText(outputStrings);
+			break;
+			
+		case 2: //cycle
+			cycleError.setVisible(true);
+			//restart code here
+			break;
+			
+		case 3: //disconnect (multiple start nodes)
+			disconnect.setVisible(true);
+			//restart code here
+			break;
+		}
+        
+        
     }//GEN-LAST:event_processDataActionPerformed
 
     private void restartConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartConfirmButtonActionPerformed
