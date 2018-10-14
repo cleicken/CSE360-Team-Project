@@ -4,7 +4,7 @@ public class Node
 {
 	public String name;
 	public int duration;
-	public LinkedList<Node> futures = new LinkedList<Node>();
+	public LinkedList<Node> futures = new LinkedList<>();
 	public String[] prev = null;
 	public boolean start = false;
 	public boolean end = false;

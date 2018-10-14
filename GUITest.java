@@ -818,7 +818,7 @@ public class GUITest extends javax.swing.JFrame {
             nonInput.setVisible(true);
             failed = true;
         }
-        else if ((!network.activitiesList.contains(network.getNode(dependencies.getText())) || dependencies.getText().equals(activityName.getText())) && depend.isSelected()) //checking if the dependencies exist and if an activity depends on itelf
+        else if ((dependencies.getText().equals(activityName.getText())) && depend.isSelected()) //checking if the dependencies exist and if an activity depends on itelf
         {
             dependError.setVisible(true);
             failed = true;
