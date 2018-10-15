@@ -121,8 +121,10 @@ public class Network {
         makePaths();
         sortPaths();
         String name = "";
-        ListIterator<Stack<Node>> pathItr = pathList.listIterator();
-        ListIterator<Integer> durItr = durationList.listIterator();
+        LinkedList<Stack<Node>> pList = new LinkedList<>(pathList);
+        ArrayList<Integer> dList = new ArrayList(durationList);
+        ListIterator<Stack<Node>> pathItr = pList.listIterator();
+        ListIterator<Integer> durItr = dList.listIterator();
         while (pathItr.hasNext()) 
         {
             Stack<Node> tempStack = pathItr.next();
@@ -224,6 +226,14 @@ public class Network {
             pathList.add(pathArray[k]);
             durationList.add(durationArray[k]);
         }
+    }
+    
+    public void clearData()
+    {
+        success.clear();
+        pathList.clear();
+        printList.clear();
+        durationList.clear();
     }
 
     public Node getNode(String name) //find the node with that string name and returns it

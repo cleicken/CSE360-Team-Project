@@ -989,6 +989,8 @@ public class GUITest extends javax.swing.JFrame {
 
     private void processDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processDataActionPerformed
         //put stuff for when the process button is pushed here
+        output.setText(""); //clear output
+        network.clearData();
     	int sortResult = network.sort();
 		
 		switch (sortResult)
@@ -1054,7 +1056,6 @@ public class GUITest extends javax.swing.JFrame {
     private void addOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addOptionActionPerformed
         // add node code
         processed.setVisible(false);
-        output.setText(""); //clear output
     }//GEN-LAST:event_addOptionActionPerformed
 
     /**
