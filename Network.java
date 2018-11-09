@@ -8,6 +8,7 @@ public class Network {
     private int duration;
     public boolean criticals = false;
     public LinkedList<Node> activitiesList = new LinkedList<>(); //linked list for all activities
+    private LinkedList<String> sortedList = new LinkedList<>();
     private LinkedList<Stack<Node>> pathList = new LinkedList<>();
     private ArrayList<Stack<Node>> printList = new ArrayList<>();
     private ArrayList<Integer> durationList = new ArrayList();
@@ -172,6 +173,7 @@ public class Network {
             
             }
         }
+        //name = name + sortActivities();
         
         return name;
     }
@@ -272,6 +274,28 @@ public class Network {
         pathList.clear();
         printList.clear();
         durationList.clear();
+    }
+    
+    public String sortActivities()
+    {
+        sortedList.clear();
+        String sortedActivities = "";
+        LinkedList<Node> queue = new LinkedList<>(activitiesList);
+        ListIterator<Node> temp = queue.listIterator(0);
+        while(temp.hasNext())
+        {
+            Node t = temp.next();
+            sortedList.add(t.name);
+        }
+        Collections.sort(sortedList);
+        ListIterator<String> tempS = sortedList.listIterator(0);
+        while(tempS.hasNext())
+        {
+            String s = tempS.next();
+            int sDur = getNode(s).duration;
+            sortedActivities += s + " | " + sDur + "\n";
+        }        
+        return sortedActivities;
     }
 
     public Node getNode(String name) //find the node with that string name and returns it

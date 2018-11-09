@@ -1053,6 +1053,10 @@ public class GUITest extends javax.swing.JFrame {
                         {
                             network.criticals = true;
                         }
+                        else
+                        {
+                            network.criticals = false;
+                        }
 			outputStrings = network.processNetwork();
                         output.setText(outputStrings);
 			break;
