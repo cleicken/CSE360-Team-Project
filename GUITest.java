@@ -83,6 +83,7 @@ public class GUITest extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        criticalOnly = new javax.swing.JCheckBox();
         activityName = new javax.swing.JTextField();
         dependencies = new javax.swing.JTextField();
         addActivity = new javax.swing.JButton();
@@ -92,15 +93,18 @@ public class GUITest extends javax.swing.JFrame {
         restartButton = new javax.swing.JButton();
         activityNameLabel = new javax.swing.JLabel();
         durationLabel = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        dataTable = new javax.swing.JTable();
         durationField = new javax.swing.JTextField();
         depend = new javax.swing.JRadioButton();
         start = new javax.swing.JRadioButton();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        dataTable = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         output = new javax.swing.JTextPane();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jInternalFrame1.setVisible(true);
 
@@ -123,7 +127,7 @@ public class GUITest extends javax.swing.JFrame {
         about.setBounds(new java.awt.Rectangle(500, 500, 500, 100));
         about.setResizable(false);
 
-        jLabel4.setText("<html>\n<p>\nActivity Processor v1:\n<br />\nMade by \nBrent Ottley - GUI Design \nAdrian Avram - Data Structure Programming\nAlexandra Dent - Data Structure Programming\nConnor Leicken - GUI and Data Structure Integration\n</p>");
+        jLabel4.setText("<html>\n<p>\nActivity Processor v2:\n<br />\nMade by: <br /> \nBrent Ottley - GUI Design  <br />\nAdrian Avram - Data Structure Programming <br />\nAlexandra Dent - Data Structure Programming <br />\nConnor Leicken - GUI and Data Structure Integration <br />\n</p>");
         jLabel4.setToolTipText("");
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -158,7 +162,7 @@ public class GUITest extends javax.swing.JFrame {
         help.setTitle("Help");
         help.setBounds(new java.awt.Rectangle(500, 500, 500, 250));
 
-        jLabel5.setText("<html>\n<p>\nAbout - Gives information on the group and the software, including current version <br />\nHelp - Basic explanation of the various buttons. This dialog box.  <br />\nRestart - Restarts the program with a clean memory <br />\nAdd Activity - Adds the information from the text boxes into the network chart in the bottom half <br />\nProcess Activity Data - Takes the data that was inputand produces the critical path as an output on the output tab  <br />\n</p>");
+        jLabel5.setText("<html>\n<p>\nAbout - Gives information on the group and the software, including current version <br />\nHelp - Basic explanation of the various buttons. This dialog box.  <br />\nRestart - Restarts the program with a clean memory <br />\nAdd Activity - Adds the information from the text boxes into the network chart in the bottom half <br />\nProcess Activity Data - Takes the data that was inputand produces the critical path as an output on the output tab  <br />\nCreate Report - Takes activity data and outputs it to a text file with the name the user specifies <br />\n</p>");
         jLabel5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -647,6 +651,8 @@ public class GUITest extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Activity Data Input"));
 
+        criticalOnly.setText("Critical Paths Only");
+
         activityName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 activityNameActionPerformed(evt);
@@ -710,6 +716,19 @@ public class GUITest extends javax.swing.JFrame {
         durationLabel.setText("Duration:");
         durationLabel.setToolTipText("Length of time required for the activity");
 
+        durationField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                durationFieldActionPerformed(evt);
+            }
+        });
+
+        Dependencies.add(depend);
+        depend.setText("Dependencies:");
+
+        Dependencies.add(start);
+        start.setSelected(true);
+        start.setText("Start Activity");
+
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Activity List"));
 
         dataTable.getTableHeader().setReorderingAllowed(false);
@@ -725,7 +744,7 @@ public class GUITest extends javax.swing.JFrame {
                 java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -742,30 +761,12 @@ public class GUITest extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
         );
-
-        durationField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                durationFieldActionPerformed(evt);
-            }
-        });
-
-        Dependencies.add(depend);
-        depend.setText("Dependencies:");
-
-        Dependencies.add(start);
-        start.setSelected(true);
-        start.setText("Start Activity");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -774,21 +775,6 @@ public class GUITest extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(aboutButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(helpButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(restartButton))
-                            .addComponent(start)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(addActivity)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(processData)))
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(depend)
@@ -802,8 +788,25 @@ public class GUITest extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(durationField)
                             .addComponent(dependencies)
-                            .addComponent(activityName))))
+                            .addComponent(activityName)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(aboutButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(helpButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(restartButton))
+                            .addComponent(start)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(addActivity)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(processData)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(criticalOnly)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -829,9 +832,11 @@ public class GUITest extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addActivity)
-                    .addComponent(processData))
+                    .addComponent(processData)
+                    .addComponent(criticalOnly))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Input", jPanel1);
@@ -840,20 +845,44 @@ public class GUITest extends javax.swing.JFrame {
 
         jScrollPane3.setViewportView(output);
 
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Report Name");
+
+        jButton1.setText("Create Report");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField1))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -869,8 +898,8 @@ public class GUITest extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.getAccessibleContext().setAccessibleName("Input");
@@ -952,8 +981,8 @@ public class GUITest extends javax.swing.JFrame {
         }
         else if (!failed) //entering a start activity
         {
-            Node node = new Node(name, duration);
-            network.addActivity(node);
+            //ode node = new Node(name, duration);
+            //network.addActivity(node);
             
             tmodel.addRow(new Object[3]);
             
@@ -966,8 +995,8 @@ public class GUITest extends javax.swing.JFrame {
         if (!failed)
         {
            tmodel.addRow(new Object[3]);
-           Node node = new Node(name, dependData, duration);
-           network.addActivity(node); 
+           //Node node = new Node(name, dependData, duration);
+           //network.addActivity(node); 
            
            dataTable.setValueAt(name, currentRow, 0); //pulling data and putting it into the table
            dataTable.setValueAt(dependData, currentRow, 1);
@@ -989,8 +1018,26 @@ public class GUITest extends javax.swing.JFrame {
 
     private void processDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processDataActionPerformed
         //put stuff for when the process button is pushed here
+        network.clearData();    //clears existing network data
+        javax.swing.table.DefaultTableModel tmodel = (javax.swing.table.DefaultTableModel) dataTable.getModel();    //grabs table data
         output.setText(""); //clear output
-        network.clearData();
+        Node node;  //declares node
+        for (int i = 0; i < currentRow; i++)    //loops through rows to add activities to nodes
+        {
+            String name = (String)tmodel.getValueAt(i, 0); //grabs first column value at each row (name)
+            String dependencies = (String)tmodel.getValueAt(i, 1); //grabs second column value at each row (dependencies)
+            int duration = (int)tmodel.getValueAt(i, 2); //grabs third column value at each row (duration)
+            if(dependencies == null)    //checks if activity is a starting node
+            {
+                node = new Node(name, duration);
+            }
+            else
+            {
+                node = new Node(name, dependencies, duration);
+            }
+            network.addActivity(node);  //adds new node as an activity in the network
+        }
+                    
     	int sortResult = network.sort();
 		
 		switch (sortResult)
@@ -1002,6 +1049,10 @@ public class GUITest extends javax.swing.JFrame {
 			
 		case 1: //successfully sorted
 			processed.setVisible(true);
+                        if (criticalOnly.isSelected())
+                        {
+                            network.criticals = true;
+                        }
 			outputStrings = network.processNetwork();
                         output.setText(outputStrings);
 			break;
@@ -1058,6 +1109,10 @@ public class GUITest extends javax.swing.JFrame {
         processed.setVisible(false);
     }//GEN-LAST:event_addOptionActionPerformed
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1103,6 +1158,7 @@ public class GUITest extends javax.swing.JFrame {
     private javax.swing.JButton addOption;
     private javax.swing.JButton closeButton;
     private javax.swing.JDialog closeConfirm;
+    private javax.swing.JCheckBox criticalOnly;
     private javax.swing.JDialog cycleError;
     private javax.swing.JTable dataTable;
     private javax.swing.JRadioButton depend;
@@ -1114,7 +1170,9 @@ public class GUITest extends javax.swing.JFrame {
     private javax.swing.JLabel durationLabel;
     private javax.swing.JDialog help;
     private javax.swing.JButton helpButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -1146,6 +1204,7 @@ public class GUITest extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JDialog noStart;
     private javax.swing.JDialog nonInput;
     private javax.swing.JDialog nonInt;

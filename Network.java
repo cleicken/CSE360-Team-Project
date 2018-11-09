@@ -6,6 +6,7 @@ import java.util.*;
 public class Network {
 
     private int duration;
+    public boolean criticals = false;
     public LinkedList<Node> activitiesList = new LinkedList<>(); //linked list for all activities
     private LinkedList<Stack<Node>> pathList = new LinkedList<>();
     private ArrayList<Stack<Node>> printList = new ArrayList<>();
@@ -125,17 +126,53 @@ public class Network {
         ArrayList<Integer> dList = new ArrayList(durationList);
         ListIterator<Stack<Node>> pathItr = pList.listIterator();
         ListIterator<Integer> durItr = dList.listIterator();
-        while (pathItr.hasNext()) 
+        
+        Stack<Node> tempStack = pathItr.next();
+        while(!tempStack.isEmpty())
         {
-            Stack<Node> tempStack = pathItr.next();
-            while(!tempStack.isEmpty())
-            {
-                Node temp = tempStack.pop();
-                name = name  + temp.name + " => ";
-            }
-            name = name + "| Duration: " + durItr.next() + "\n";
-            
+            Node temp = tempStack.pop();
+            name = name  + temp.name + " => ";
         }
+        int criticalDuration = durItr.next();
+        name = name + "| Duration: " + criticalDuration + "\n";
+        
+        if(criticals)
+        {
+            while (pathItr.hasNext()) 
+            {
+                tempStack = pathItr.next();
+                Node temp = tempStack.peek();
+                int dur = durItr.next();
+                if(dur == criticalDuration)
+                {
+                    while(!tempStack.isEmpty())
+                    {
+                        temp = tempStack.pop();
+                        name = name  + temp.name + " => ";
+                    }
+                    name = name + "| Duration: " + dur + "\n";
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+        else
+        {
+            while (pathItr.hasNext()) 
+            {
+                tempStack = pathItr.next();
+                while(!tempStack.isEmpty())
+                {
+                    Node temp = tempStack.pop();
+                    name = name  + temp.name + " => ";
+                }
+                name = name + "| Duration: " + durItr.next() + "\n";
+            
+            }
+        }
+        
         return name;
     }
     
@@ -230,6 +267,7 @@ public class Network {
     
     public void clearData()
     {
+        activitiesList.clear();
         success.clear();
         pathList.clear();
         printList.clear();
