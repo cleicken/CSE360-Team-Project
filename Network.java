@@ -124,10 +124,12 @@ public class Network {
                     progress = true;
                 }
 
-                if (!progress) {
-                    System.out.println("CYCLE");
-                    return result + 1; //returns result as 2, meaning a cycle was detected
-                }
+                
+            }
+            if (!progress) 
+            {
+                System.out.println("CYCLE");
+                return result + 1; //returns result as 2, meaning a cycle was detected
             }
             rem = toRemove.listIterator(0);
             while (rem.hasNext())
