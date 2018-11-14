@@ -1,4 +1,11 @@
 
+import java.io.BufferedOutputStream;
+import java.io.DataOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.text.SimpleDateFormat;
 import java.util.*;
 //import java.util.ArrayList;
 //import java.util.Scanner;
@@ -15,6 +22,36 @@ public class Network {
     Stack<Node>[] pathArray;
     Integer[] durationArray;
     private LinkedList<Node> success = new LinkedList<>();
+    private boolean fileCreated = false;
+    private String reporttitle = "";
+    private FileOutputStream fos;
+    private DataOutputStream outStream;
+    private boolean datePrinted = false;
+    
+    public void createReport(String name, String output) {
+    	
+    	try {
+    		if (fileCreated == false) {
+    		fos = new FileOutputStream(name + ".txt");
+    		String currentdate = new SimpleDateFormat("MM/dd/yyyy hh:mm a").format(new Date());
+    		//outStream = new DataOutputStream(new BufferedOutputStream(fos));
+    		PrintStream out = new PrintStream(fos);
+    		out.print("[Title]" + System.lineSeparator());
+    		out.print(name + System.lineSeparator() + System.lineSeparator());
+    		out.print("[Date Time]" + System.lineSeparator());
+    		out.print(currentdate + System.lineSeparator() + System.lineSeparator());
+    		out.print("[Activity Name   |   Duration]"+System.lineSeparator());
+    		out.print(sortActivities() + System.lineSeparator() + System.lineSeparator());
+    		out.print("[Path =>| Duration]" + System.lineSeparator());
+                out.print(output);
+    		fileCreated = true;
+    		}
+
+	    } catch (IOException ioe) {
+			System.out.println("Trouble reading from the file: " + ioe.getMessage());
+	    }
+
+    }
 
     public int sort() {
         int result = 0;
@@ -135,7 +172,7 @@ public class Network {
             name = name  + temp.name + " => ";
         }
         int criticalDuration = durItr.next();
-        name = name + "| Duration: " + criticalDuration + "\n";
+        name = name + "| Duration: " + criticalDuration + System.lineSeparator();
         
         if(criticals)
         {
@@ -151,7 +188,7 @@ public class Network {
                         temp = tempStack.pop();
                         name = name  + temp.name + " => ";
                     }
-                    name = name + "| Duration: " + dur + "\n";
+                    name = name + "| Duration: " + dur + System.lineSeparator();
                 }
                 else
                 {
@@ -169,7 +206,7 @@ public class Network {
                     Node temp = tempStack.pop();
                     name = name  + temp.name + " => ";
                 }
-                name = name + "| Duration: " + durItr.next() + "\n";
+                name = name + "| Duration: " + durItr.next() + System.lineSeparator();
             
             }
         }
@@ -293,8 +330,8 @@ public class Network {
         {
             String s = tempS.next();
             int sDur = getNode(s).duration;
-            sortedActivities += s + " | " + sDur + "\n";
-        }        
+            sortedActivities += s + " | " + sDur + System.lineSeparator();
+        }     
         return sortedActivities;
     }
 
@@ -312,4 +349,9 @@ public class Network {
         }
         return found;
     }
+    
+    
+    
+
+
 }
